@@ -1,0 +1,25 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class CarController: MonoBehaviour;
+{
+    public float speed = 10f;
+    public float turnSpeed = 100f;
+
+    public InputActionReference moveForaward;
+    public InputAcitonRefernce reverse;
+    public InputActionReference turnleft;
+    public InputActionReference turnright;
+
+    void update()
+    {
+        if(moveForward.action.IsPressed())
+        transform.Translate(Vector3.Forward*Speed*Time.deltaTime);
+        if(reverse.action.IsPressed())
+        transform.Translate(Vector3.Back*Speed*Time.deltaTime);
+        if(turnleft.action.IsPressed())
+        transform.Translate(Vector3.down*turnSpeed*Time.deltaTime);
+        if(turnright.action.IsPressed()
+        transform.Translate(Vector3.up*turnSpeed*Time.deltaTime));
+    }
+}
